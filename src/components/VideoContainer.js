@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { YOUTUBE_VIDEOS_API } from "../utility/constants";
+import VideoCard from "./VideoCard";
 
 const VideoContainer = () =>{
 
@@ -15,7 +16,7 @@ const VideoContainer = () =>{
 
     return(
         <div>
-            video container
+            <VideoCard />
         </div>
     )
 }
