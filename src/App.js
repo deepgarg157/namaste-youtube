@@ -5,6 +5,7 @@ import store from "./utility/store"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import Demo from "./components/Demo";
 
 function App() {
 
@@ -20,6 +21,10 @@ function App() {
         {
           path : "/watch",
           element : <WatchPage />
+        },
+        {
+          path : '/demo',
+          element : <Demo />
         }
 
       ]
