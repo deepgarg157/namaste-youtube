@@ -1,19 +1,50 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { findPrime } from "../utility/helper";
+import Demo2 from "./Demo2";
 
-const Demo = () =>{
+const Demo = () => {
+    const [text, setText] = useState(0);
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-    const [darkBg, setDarkBg] = useState(false)
+    // const prime = findPrime(text);
+    const prime = useMemo(() => findPrime(text), [text]);
 
     return (
-        <div className={" border border-gray-700 w-72 h-96 mx-4" + (darkBg && "bg-gray-900 text-white")}>
-            <div className="font-bold p-4 text-center ">
-                useMemo
-            </div>
-            <button className="px-4 py-1 bg-green-300 mx-4 rounded-lg" onClick={()=>{
-                setDarkBg(!darkBg)
-            }}>Dark Mode</button>
-        </div>
-    )
-}
+        <>
+        <div
+            className={
+                "m-4 p-2 w-96 h-96 border border-black " +
+                (isDarkTheme && "bg-gray-900 text-white")
+            }
 
+        >
+            <div>
+                <h1 className="font-bold text-center text-lg">useMemo</h1>
+            </div>
+            <div>
+                <button
+                    className="m-10 p-2 bg-green-200"
+                    onClick={() => setIsDarkTheme(!isDarkTheme)}
+                >
+                    Toggle
+                </button>
+            </div>
+            <div>
+                <input
+                    className="border border-black w-72 px-2"
+                    type="number"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                />
+            </div>
+            <div>
+                <h1 className="mt-4 font-bold text-xl">nth Prime : {prime}</h1>
+            </div>
+        </div>
+        <div>
+           <Demo2 />
+        </div>
+        </>
+    );
+};
 export default Demo;
