@@ -3,8 +3,11 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../utility/appSlice";
 import CommentsContainer from "./CommentContainer";
 import LiveChat from "./LiveChat";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const WatchPage = () => {
+
+    const [searchParams] = useSearchParams();
 
     const dispatch = useDispatch()
 
@@ -18,7 +21,7 @@ const WatchPage = () => {
                     <iframe className="rounded-xl"
                         width="850"
                         height="450"
-                        src="https://www.youtube.com/embed/YT8rY_o5VhY?si=K0ApumBwh_0jdK-J"
+                        src={"https://www.youtube.com/embed/" + searchParams.get("v")}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div>
