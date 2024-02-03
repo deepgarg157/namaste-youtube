@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import Demo from "./components/Demo";
+import Downloads from "./components/Downloads";
+import History from "./components/History";
 
 function App() {
 
@@ -25,6 +27,14 @@ function App() {
         {
           path : '/demo',
           element : <Demo />
+        },
+        {
+          path : '/downloads',
+          element : <Downloads />
+        },
+        {
+          path : '/history',
+          element : <History />
         }
 
       ]

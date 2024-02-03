@@ -18,10 +18,10 @@ const SideBar = () => {
             <h1 className="font-bold text-lg pt-3">You</h1>
             <ul className="border-b border-gray-200 w-36">
                 <li className="py-2">Your Channel</li>
-                <li className="py-2">History</li>
+                <li className="py-2"><Link to={'/history'}>History</Link></li>
                 <li className="py-2">Your Videos</li>
                 <li className="py-2">Watch Later</li>
-                <li className="py-2">Downloads</li>
+                <li className="py-2"><Link to={'/downloads'}>Downloads</Link></li>
                 <li className="py-2">Show More</li>
             </ul>
             <h1 className="font-bold text-lg pt-3">Subscriptions</h1>
